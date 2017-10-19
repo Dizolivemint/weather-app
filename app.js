@@ -21,13 +21,13 @@ geocode.geocodeAddress(argv.address, (errorMessage, results) => {
     console.log(errorMessage);
   } else {
     console.log(results.address);
-    weather.getWeather(results.latitude, results.longitude, (errorMessage, results) => {
+    weather.getWeather(results.latitude, results.longitude, (errorMessage, weatherResults) => {
       if (errorMessage) {
         console.log(errorMessage);
       } else {
-        console.log(`Currently, the weather is ${results.summary}.`);
-        console.log(`It is ${results.temperature} degrees, and feels like ${results.apparentTemperature} degrees.`);
-        console.log(`The humidity is ${results.humidity} percent with a Dew point at ${results.dewPoint}`);
+        console.log(`Currently, the weather is ${weatherResults.summary}.`);
+        console.log(`It is ${weatherResults.temperature} degrees and feels like ${weatherResults.apparentTemperature} degrees.`);
+        console.log(`The humidity is ${weatherResults.humidity} percent with a Dew point at ${weatherResults.dewPoint}`);
       }
     });
   }
