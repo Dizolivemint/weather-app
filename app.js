@@ -23,14 +23,13 @@
 //   }
 // });
 
-// ef35323be7727ca3403d063772426a02
-
+const apiDarkskyURL = require('./darksky/darksky')
 
 const request = require('request');
 
-// Get temperature
+// Get temperature from darksky
 request ({
-  url: 'https://api.darksky.net/forecast/ef35323be7727ca3403d063772426a02/37.8267,-122.4233',
+  url: apiDarkskyURL,
   json: true
 }, (error, response, body) => {
   if (!error && response.statusCode === 200) {
